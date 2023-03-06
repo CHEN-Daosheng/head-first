@@ -64,4 +64,10 @@ public class StreamTest {
         List<UserDO> usersF = users.stream().filter(p -> null != p.getScore()).sorted(Comparator.comparing(UserDO::getScore).reversed()).collect(Collectors.toList());
         log.info("list的流操作，排序：{}", JSONValue.toJSONString(usersF));
     }
+
+    @Test
+    public void testStreamImport() {
+        List<UserDO> usersF = users.stream().filter(p -> null != p.getScore()).sorted(Comparator.comparing(UserDO::getScore).reversed()).collect(Collectors.toList());
+        log.info("list的流操作，Import：{}", JSONValue.toJSONString(usersF));
+    }
 }
