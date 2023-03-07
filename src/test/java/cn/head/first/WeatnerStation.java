@@ -16,6 +16,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class WeatnerStation {
 
+    /**
+     * 观察者和可观察者都是个接口，可观察者对象是一个类
+     */
+
     @Test
     public void testWeatherStation(){
         WeatherData weatherData=new WeatherData();
