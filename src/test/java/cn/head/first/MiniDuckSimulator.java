@@ -10,14 +10,15 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/**
+ * 策略模式
+ */
 @Slf4j
 @SpringBootTest(classes = HeadFirstApplication.class)
 @RunWith(SpringRunner.class)
 public class MiniDuckSimulator {
 
-    /**
-     * 策略模式
-     */
+
     @Test
     public void testDuck(){
         Duck mallard=new MallardDuck();
