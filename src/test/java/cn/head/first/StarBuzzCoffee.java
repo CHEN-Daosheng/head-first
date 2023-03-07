@@ -1,15 +1,14 @@
 package cn.head.first;
 
 import cn.head.first.abstracts.Beverage;
-import cn.head.first.service.Espresso;
-import cn.head.first.service.HouseBlend;
-import cn.head.first.service.Mocha;
-import cn.head.first.service.Soy;
+import cn.head.first.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.*;
 
 /**
  * 装饰者模式
@@ -30,7 +29,20 @@ public class StarBuzzCoffee {
         beverage1 = new Soy(beverage1);
 
         System.out.println(beverage1.getDescription() + " $" + beverage1.cost());
+    }
 
-
+    @Test
+    public void testInput() {
+        String path = "C:/Users/think/Desktop/国网二期改进/笔.txt";
+        int c;
+        try (InputStream in = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream(path)))) {
+            while ((c = in.read()) > 0) {
+                System.out.print((char) c);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
